@@ -12,9 +12,14 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
+        {/* Redirect root to login Page */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/expenses" element={<Expense />} />
+
+        {/* Layout wrapper */}
+        <Route element={<App />}>
+          <Route path="/expenses" element={<Expense />} />
+        </Route>
       </Routes>
     
     </BrowserRouter>
